@@ -1,0 +1,55 @@
+<p>Regexp validator</p>
+
+<button onclick="myFunction()">Check expr</button>
+
+<!-paragraful cu valoarea noastra->
+<p id="demo">numar = 5 :-)</p>
+<p id="demo2">weed = 13 + 7 :-)</p>
+<p id="demo3">prod = 345 * 10 :-)</p>
+<p id="demo4">sick = 345653 - 45635 :-)</p>
+<p id="demo5">snoop = 123 +1334 :-)</p>
+
+<script>
+function myFunction() {
+    //lui str ii dam valoarea paragrafului cu expresia noastra
+    var str = document.getElementById("demo").innerHTML; 
+	var str2 = document.getElementById("demo2").innerHTML;
+	var str3 = document.getElementById("demo3").innerHTML;
+	var str4 = document.getElementById("demo4").innerHTML;
+	var str5 = document.getElementById("demo5").innerHTML;
+	
+    //verificam val lui str cu expresia reg , dak e ok ne afis ca merge , ivers ..nu merge
+    if (/(([a-z,A-Z]{4})\s=\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[+]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})\s=\s[0-9]+\s[*]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[-]\s[0-9]+\s[:][-][)]+)/i.test(str)) 
+        {
+		document.getElementById("demo").innerHTML = ":-)";
+		}
+   else 
+         {     document.getElementById("demo").innerHTML = ":-(";}
+    if (/(([a-z,A-Z]{4})\s=\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[+]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})\s=\s[0-9]+\s[*]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[-]\s[0-9]+\s[:][-][)]+)/i.test(str2)) 
+        {
+            document.getElementById("demo2").innerHTML = ":-)";}
+   else 
+         {     document.getElementById("demo2").innerHTML = ":-(";}
+	
+	if (/(([a-z,A-Z]{4})\s=\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[+]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})\s=\s[0-9]+\s[*]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[-]\s[0-9]+\s[:][-][)]+)/i.test(str3)) 
+        {
+            document.getElementById("demo3").innerHTML = ":-)";}
+   else 
+         {     document.getElementById("demo3").innerHTML = ":-(";}
+	
+	if (/(([a-z,A-Z]{4})\s=\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[+]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})\s=\s[0-9]+\s[*]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[-]\s[0-9]+\s[:][-][)]+)/i.test(str4)) 
+        {
+            document.getElementById("demo4").innerHTML = ":-)";}
+   else 
+         {     document.getElementById("demo4").innerHTML = ":-(";}
+    
+	if (/(([a-z,A-Z]{4})\s=\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[+]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})\s=\s[0-9]+\s[*]\s[0-9]+\s[:][-][)]+)|(([a-z,A-Z]{4})+\s=\s[0-9]+\s[-]\s[0-9]+\s[:][-][)]+)/i.test(str5)) 
+        {
+            document.getElementById("demo5").innerHTML = ":-)";}
+   else 
+         {     document.getElementById("demo5").innerHTML = ":-(";}
+}
+</script>
+
+</body>
+</html>
