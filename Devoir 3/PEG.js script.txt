@@ -14,7 +14,11 @@ secondAction
    = left:string " = " right:additive { return left+' are valoarea de '+right }
 
 additive
-  = left:exponential "+" right:additive { return left + right; }
+  = left:subtraction "+" right:additive { return left + right; }
+  / subtraction
+
+subtraction
+  = left:exponential "-" right:subtraction { return left - right; }
   / exponential
 
 exponential
