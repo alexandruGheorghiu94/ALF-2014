@@ -5,7 +5,7 @@
  */
 
 start
-  = firstAction
+  = (firstAction)*
 
 //separarea $$ de expresia noastra 
 firstAction
@@ -55,4 +55,4 @@ string "string"
 
 //semnul de $$
 pct
-  = final:[$][$] { return final }
+  = final:[$][$]"\n" { return final }
