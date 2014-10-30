@@ -10,11 +10,12 @@ firstAction
    =left:secondAction " " right:pct {return left}
 
 secondAction
-   = left:string " = " right:additive {return left+' are valoarea de '+right}
+   = left:string " = " right:additive { return left+' are valoarea de '+right }
 
 
 string "string"
-  = variable:([a-zA-Z]+) {return variable.join("");}
+  = variable:([a-zA-Z]+) { return variable.join(""); }
+
 additive
   = left:multiplicative "+" right:additive { return left + right; }
   / multiplicative
@@ -31,4 +32,4 @@ integer "integer"
   = (digits:[0-9]+) { return parseInt(digits.join(""), 10); }
 
 pct
-  = final:[$][$] {return final }
+  = final:[$][$] { return final }
