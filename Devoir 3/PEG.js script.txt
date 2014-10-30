@@ -1,6 +1,7 @@
 /*
- * Classic example grammar, which recognizes simple arithmetic expressions like
- * "2*(3+4)". The parser generated from this grammar then computes their value.
+ * Gheorghiu Ion-Alexandru
+ * Groupe 1231 F
+ * working parser for +,-,*,/,^ operations
  */
 
 start
