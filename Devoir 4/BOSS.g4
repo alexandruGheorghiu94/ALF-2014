@@ -1,3 +1,6 @@
+//Gheorghiu Ion-Alexandru
+//Groupe 1231F
+
 grammar Boss;
 r : ID '=' expr '$''$' ;
 
@@ -29,5 +32,8 @@ pri = INT
 
 INT : [0-9]+
 ID : [a-zA-Z]+
+EQUAL : [ = ] 
+//End Of Input
+EOI : [$][$]
 	
 	
