@@ -1,40 +1,40 @@
 //Gheorghiu Ion-Alexandru
 //Groupe 1231F
 
-grammar Boss;
+grammar BOSS;
 r : ID EQUAL Expr EOI ;
 
 //Expresia noastra matematica
-Expr : sum ;
+Expr : Sum ;
 
 // functia de suma
-sum : sub '+' sum 
-	| sub
+Sum : Sub '+' Sum 
+	| Sub
 	;
 
 //functia de diferenta	
-sub : exp '-' sub 
-	| exp
+Sub : Exp '-' Sub 
+	| Exp
 	;
 
 //functia de exponential
-exp : div '^' exp 
-	| div
+Exp : Div '^' Exp 
+	| Div
 	;
 
 //functia de impartire	
-div : mul '/' div 
-	| mul
+Div : Mul '/' Div 
+	| Mul
 	;
 
 //functia de inmultire
-mul : pri '*' mul 
-	| pri
+Mul : Pri '*' Mul 
+	| Pri
 	;
 
 //prioritizarea operatiilor in functie de paranteza
-pri : INT
-	| '(' sum ')' 
+Pri : INT
+	| '(' Sum ')' 
 	;
 
 //numbers , numbers everywhere
