@@ -1,8 +1,8 @@
 //Gheorghiu Ion-Alexandru
 //Groupe 1231F
 
-grammar BOSS;
-r : ID EQUAL Expr EOI ;
+grammar Boss;
+r : ID EQUAL Expr EOI;
 
 //Expresia noastra matematica
 Expr : Sum ;
@@ -34,16 +34,16 @@ Mul : Pri '*' Mul
 
 //prioritizarea operatiilor in functie de paranteza
 Pri : INT
-	| '(' Sum ')' 
+	| '('Sum')' 
 	;
 
 //numbers , numbers everywhere
 INT : [0-9]+ ;
 //numele variabilei
 ID : [a-zA-Z]+ ;
-//separatorul variabilei de expresie 
-EQUAL : [=] ;
+//separatorul variabilei de expresie
+ 
+EQUAL : ' = ' ;
+
 //End Of Input
-EOI : [$][$] ;
-	
-	
+EOI : ' $$' ;

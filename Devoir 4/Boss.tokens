@@ -1,0 +1,13 @@
+Sum=2
+Exp=4
+Mul=6
+INT=8
+ID=9
+Pri=7
+EOI=11
+Sub=3
+EQUAL=10
+Expr=1
+Div=5
+' = '=10
+' $$'=11
