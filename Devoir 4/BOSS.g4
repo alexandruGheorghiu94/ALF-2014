@@ -1,5 +1,6 @@
 //Gheorghiu Ion-Alexandru
 //Groupe 1231F
+//Utiliser antlr pour faire l'arbre du langage boss. 
 
 grammar Boss;
 r : ID EQUAL Expr EOI;
