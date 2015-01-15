@@ -1,0 +1,20 @@
+addOneMachine.stateTransition = {
+    "start": 
+		{ 
+			"0": ["0", "right", "start"],
+			"1" : ["1", "right", "start"],
+			"": ["", "left", "add"]
+		},
+    "add": 
+		{
+			"0": ["1", "left", "done"],
+			"1": ["0", "left", "add"],
+			"": ["1", "left", "done"]
+		},
+    "done": 
+		{
+			"0": ["0", "left", "done"],
+			"1": ["1", "left", "done"],
+			"": ["", "right", "stop"]
+		},
+    "stop": {}  // Don't do anything else.
