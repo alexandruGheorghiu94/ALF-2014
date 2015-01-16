@@ -1,0 +1,113 @@
+﻿//Gheorghiu Ion-Alexandru
+//Groupe 1231F
+
+PARSER_BEGIN(Boss)
+
+public class Boss {
+	
+    public static void main(String[] args) throws ParseException, Exception
+	{
+	try {
+        Boss start = new Boss(System.in);
+		while (true)
+			{ start.Verif2();
+			System.out.println("Totu' e p sistem"); System.exit(-1);}
+		}
+		
+	catch(ParseException e)
+		{
+			System.out.println(e.getMessage());
+			System.out.println("Boss , da cu virgula !"); }
+		}
+		
+    }
+
+
+PARSER_END(Boss)
+
+SKIP:  { " "|"\t" | "\r"  }
+                
+TOKEN: { <#NUMBER: (("-")? <INT>) | (("-")? <INT> "." <INT>)| <ZERO> >}
+TOKEN: { <VARIABLE: (<ID>)+ >}
+TOKEN: { <TERM: (<ID>)+|<NUMBER> >}
+TOKEN: {<#INT: (["0"-"9"])+ >}
+TOKEN: {<#ZERO: "0" >}
+TOKEN: {<#ID: ["a"-"z","A"-"Z"]> }
+TOKEN: {<TERMINATOR: "$$">}
+TOKEN: {<EOP: "('^')">}
+TOKEN: {< EOL: ("\n")? >}
+TOKEN : 
+{ 
+	  <ASSIGN : "=">  
+	| <PLUS : "+" >  
+	| <MINUS:"-"> 
+	| <MULTIPLY:"*"> 
+	| <DIVIDE:"/"> 
+	
+}
+
+TOKEN:
+{
+	  <EQUAL: "==" > 
+	| <LESSEQUAL: "<=" > 
+	| <LESS: "<" > 
+	| <GREATEREQUAL: ">=" > 
+	| <GREATER: ">" > 
+	| <DIFFERENT: "!=" > 
+	
+}
+
+
+void Verif():
+{}
+{
+< VARIABLE >< ASSIGN >(<TERM>)(( <PLUS> | <MINUS> | <MULTIPLY> | <DIVIDE> )(<TERM>))?<TERMINATOR>
+}
+
+void Verif2():
+
+{Token t=null;
+int i;
+int value=0;}
+{
+((< VARIABLE > < ASSIGN >
+t=<TERM>
+{i=Integer.parseInt(t.image); }
+{value=i; }
+(
+ <PLUS> 
+ t=<TERM>
+ {i=Integer.parseInt(t.image); }
+ {value+=i; }
+ 
+ |
+ <MINUS>
+ t=<TERM>
+ {i=Integer.parseInt(t.image); }
+ {value-=i; }
+ 
+ |
+ <MULTIPLY>
+ t=<TERM>
+ {i=Integer.parseInt(t.image); }
+ {value*=i; }
+
+ |
+ <DIVIDE>
+ t=<TERM>
+ {i=Integer.parseInt(t.image); }
+ {value/=i; }
+ 
+ )* <TERMINATOR> {System.out.println(value);} <EOL>)*)
+ (<EOL>)* 
+ <EOP>
+
+}
+
+
+/* Input:
+a=4+7 <(^)
+b=6*7 <(^)
+c=5/3 <(^)
+('^')
+*/
